@@ -24,6 +24,16 @@
         <None Include="tsconfig.json" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\dotnet.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\main-P--y5vOd.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\main-t6jnks1d.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\typescript.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\vite.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\main-BhjHhRYg.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\main-pNDSKUsR.css" />
+    </ItemGroup>
+
     <!-- Ensure Node environment on Build -->
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build;PublishBuildAssets" Condition=" !Exists('node_modules') ">
         <!-- Ensure Node.js is installed -->

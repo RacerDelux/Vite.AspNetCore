@@ -52,10 +52,13 @@ export default defineConfig(async () => {
         root: 'Assets',
         publicDir: 'public',
         build: {
+            target: 'esnext',
+            minify: 'terser',
             emptyOutDir: true,
             manifest: true,
             outDir: '../wwwroot',
             assetsDir: '',
+            cssMinify: 'lightningcss',
             rollupOptions: {
                 input: 'Assets/main.ts'
             },

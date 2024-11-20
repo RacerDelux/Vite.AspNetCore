@@ -6,5 +6,13 @@
 import 'vite/modulepreload-polyfill';
 import { setupCounter } from './counter';
 import './style.scss';
+import * as signalR from '@microsoft/signalr';
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!);
+class Test {
+    public constructor() {
+        setupCounter(document.querySelector<HTMLButtonElement>('#counter')!);
+        const connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+        console.log(connection);
+    }
+}
+const testObj = new Test();

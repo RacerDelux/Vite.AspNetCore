@@ -1,16 +1,16 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Home Page";
 }
 
 <div>
 	<a href="https://vitejs.dev" target="_blank">
-		<img src="~/vite.svg" class="logo" alt="Vite logo" />
+		<img src="~/vite.svg" class="logo" alt="Vite logo"/>
 	</a>
 	<a href="https://dotnet.microsoft.com/" target="_blank">
-		<img src="~/dotnet.svg" class="logo" alt="Dotnet logo" />
+		<img src="~/dotnet.svg" class="logo" alt="Dotnet logo"/>
 	</a>
 	<a href="https://www.typescriptlang.org/" target="_blank">
-		<img src="~/typescript.svg" class="logo vanilla" alt="TypeScript logo" />
+		<img src="~/typescript.svg" class="logo vanilla" alt="TypeScript logo"/>
 	</a>
 	<h1>Vite + ASP.NET + TypeScript</h1>
 	<div class="card">
@@ -20,3 +20,13 @@
 		Click on the Vite, ASP.NET and TypeScript logos to learn more
 	</p>
 </div>
+
+@section styles{
+	@* This line includes the style from the "main.ts" entrypoint *@
+	<link rel="stylesheet" vite-href="~/main.ts" asp-append-version="true"/>
+}
+
+@section scripts {
+	<!-- This line includes your "main.ts" entrypoint -->
+	<script type="module" vite-src="~/main.ts"></script>
+}

@@ -7,14 +7,8 @@ using ViteNET.MVC.Models;
 
 namespace ViteNET.MVC.Controllers;
 
-public class HomeController : Controller
+public class HomeController(ILogger<HomeController> logger) : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        this._logger = logger;
-    }
 
     public IActionResult Index()
     {
@@ -36,7 +30,7 @@ public class HomeController : Controller
     [HttpPost("/hello")]
     public IActionResult Hello()
     {
-        string randomString = Guid.NewGuid().ToString();
+        var randomString = Guid.NewGuid().ToString();
         return this.Ok($"Hello World! GUID: {randomString}");
     }
 }
